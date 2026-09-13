@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>깨알람 고객지원</title>
 <style>
   :root { color-scheme: light dark; }
@@ -16,8 +16,13 @@
   h2 { font-size: 1.1rem; margin-top: 2rem; }
   .sub { color: #666; margin-top: 0; }
   @media (prefers-color-scheme: dark) { .sub { color: #999; } }
+  details { border-top: 1px solid #ddd; padding: .6rem 0; }
+  details:last-of-type { border-bottom: 1px solid #ddd; }
+  @media (prefers-color-scheme: dark) { details { border-color: #333; } }
+  summary { cursor: pointer; font-weight: 600; }
+  details p, details ul { margin: .5rem 0 .25rem; }
   ul { padding-left: 1.2rem; }
-  li { margin: .4rem 0; }
+  li { margin: .3rem 0; }
   footer { margin-top: 3rem; font-size: .9rem; color: #666; border-top: 1px solid #ddd; padding-top: 1rem; }
   @media (prefers-color-scheme: dark) { footer { color: #999; border-color: #333; } }
 </style>
@@ -27,42 +32,65 @@
 <p class="sub">자기 전에 외우고, 아침엔 퀴즈로 깨는 학습 알람</p>
 
 <h2>문의</h2>
-<ul>
-  <li>이메일: <a href="mailto:funjun2938@gmail.com">funjun2938@gmail.com</a></li>
-  <li>보통 2~3일 안에 답변드립니다. 문제 상황과 사용 중인 기기·OS 버전을 함께 적어주시면 빠릅니다.</li>
-</ul>
+<p>이메일: <a href="mailto:funjun2938@gmail.com">funjun2938@gmail.com</a><br>
+앱의 설정 → 고객지원 → '이메일로 문의'를 누르면 기기·앱 버전이 자동으로 채워져서 더 빨리 확인할 수 있어요. 보통 2~3일 안에 답장드립니다.</p>
 
 <h2>자주 묻는 질문</h2>
 
-<h3>알람이 울리지 않아요</h3>
+<details id="not-ringing"><summary>알람이 안 울렸어요</summary>
+<p>앱의 설정 → 고객지원 → '알람이 안 울릴 때'에서 지금 상태를 점검할 수 있어요. 자주 있는 원인은 네 가지예요.</p>
 <ul>
-  <li><b>알림 권한</b>이 켜져 있는지 확인해 주세요. 설정 &gt; 깨알람 &gt; 알림.</li>
-  <li>Android는 <b>정확한 알람(알람 및 리마인더)</b> 권한이 추가로 필요합니다.</li>
-  <li>Android에서 <b>배터리 절전·앱 절전</b>에 앱이 들어가 있으면 알람이 차단될 수 있습니다.
-      삼성 기기는 디바이스 케어 &gt; 배터리 &gt; 백그라운드 사용 제한에서 깨알람을 제외해 주세요.
-      앱 안에 경고 배너가 뜨면 눌러서 바로 이동할 수 있습니다.</li>
-  <li>iPhone에서는 앱을 <b>강제 종료(위로 밀어 닫기)</b>하면 알람 소리가 나지 않을 수 있습니다.
-      알람을 쓰는 동안에는 앱을 종료하지 말아 주세요.</li>
+<li>알림 권한이 꺼져 있음 — 설정 → 깨알람 → 알림</li>
+<li>기기 음량이 0 — 무음 스위치는 뚫지만 음량이 0이면 들리지 않아요</li>
+<li>앱을 위로 밀어 완전히 종료함 — iPhone은 이때 소리 없이 알림만 와요</li>
+<li>알람 설정의 '알람 대기 항상 켜기'가 꺼져 있음</li>
 </ul>
+<p>Android는 배터리 최적화와 제조사 절전(삼성: 디바이스 케어 → 배터리 → 백그라운드 사용 제한)에서 깨알람을 빼 주세요.</p>
+</details>
 
-<h3>알람을 끄려면 어떻게 하나요</h3>
-<ul>
-  <li>전날 밤에 학습한 단어 퀴즈를 풀면 알람이 꺼집니다. 이것이 앱의 핵심 기능입니다.</li>
-  <li>급한 경우를 위한 비상 해제도 준비되어 있습니다.</li>
-</ul>
+<details id="no-sound"><summary>알림은 왔는데 소리가 없었어요</summary>
+<p>대부분 밤사이 앱이 종료된 경우예요. 이때는 알림으로만 울려서, 2분 동안 진동이 이어지고 알람음이 세 번 납니다. 앱을 닫지 않고 두면 퀴즈를 풀 때까지 계속 울려요. 기기 음량이 0이었는지도 확인해 주세요.</p>
+</details>
 
-<h3>학습 기록이 사라졌어요</h3>
-<ul>
-  <li>모든 기록은 기기 안에만 저장됩니다. 앱을 삭제하면 함께 지워지며 복구할 수 없습니다.</li>
-  <li>설정에서 백업 파일을 내보내 두면 기기를 바꿔도 옮길 수 있습니다.</li>
-</ul>
+<details id="skip-quiz"><summary>퀴즈를 안 풀고 끌 수 있나요</summary>
+<p>알람 화면 아래 '퀴즈 없이 끄기'를 누르고 짧은 문장을 따라 적으면 꺼져요. 그날은 낟알을 받지 못하고, 6시간 안에 퀴즈를 풀면 만회할 수 있어요.</p>
+</details>
 
-<h3>계정이 필요한가요</h3>
-<ul>
-  <li>필요 없습니다. 회원가입·로그인이 없고, 이름·이메일 등 개인정보를 수집하지 않습니다.
-      앱 개선을 위한 익명 사용 통계와 오류 로그만 수집하며, 계정과 연결되지 않습니다.
-      자세한 내용은 <a href="./">개인정보처리방침</a>을 참고해 주세요.</li>
-</ul>
+<details id="many-alarms"><summary>알람을 여러 개 맞췄더니 매번 퀴즈가 나와요</summary>
+<p>의도한 동작이에요. 뒤 알람은 퀴즈를 풀고 다시 잠든 경우를 깨우려고 있어요. 퀴즈를 푸는 동안 다음 알람 시각이 지나면 그 알람은 해제된 것으로 처리돼요.</p>
+</details>
+
+<details id="no-study"><summary>공부를 안 한 날도 알람이 울리나요</summary>
+<p>네, 똑같이 울려요. 전날 공부한 단어가 없으면 복습 단어(틀렸던 단어·예전에 배운 단어)로 퀴즈가 나와요.</p>
+</details>
+
+<details id="daytime"><summary>낮에 공부해도 되나요</summary>
+<p>네. 학습일은 새벽 4시를 기준으로 나뉘어서, 오늘 낮에 배운 단어가 내일 아침 퀴즈에 나와요.</p>
+</details>
+
+<details id="level"><summary>단어가 너무 쉽거나 어려워요</summary>
+<p>설정 → 학습 설정에서 수준을 다시 정할 수 있어요. 자동 조절을 켜 두면 퀴즈 정답률이 계속 낮을 때 한 단계 내려가고, 밤 학습에서 아는 단어를 많이 빼면 한 단계 올라가요. 학습 카드를 위로 밀면 아는 단어를 빼고 새 단어로 바꿔요.</p>
+</details>
+
+<details id="reminders"><summary>학습 알림이 너무 자주 와요</summary>
+<p>설정 → 학습 설정의 '학습 리마인더'로 끌 수 있어요. 그날 공부를 마쳤으면 리마인더는 오지 않아요.</p>
+</details>
+
+<details id="battery"><summary>배터리를 많이 쓰나요</summary>
+<p>'알람 대기 항상 켜기'가 켜져 있으면 무음 모드에서도 울리도록 소리 없는 오디오로 앱을 깨워 둬서 배터리를 조금 더 써요. 끄면 배터리는 아끼지만, 무음 모드이거나 앱이 종료된 아침엔 알림으로만 울려요. 설정 → 알람 설정에 있어요.</p>
+</details>
+
+<details id="updates"><summary>새 버전은 어떻게 받나요</summary>
+<p>앱이 새 버전을 알아서 받아 둬요. 다음 알람까지 여유가 있을 때 앱을 열면 조용히 적용되고, 화면 위에 '새 버전이 준비됐어요'가 뜨면 '다시 시작'으로 바로 적용할 수도 있어요.</p>
+</details>
+
+<details id="backup"><summary>폰을 바꾸면 기록은 어떻게 되나요</summary>
+<p>학습 기록은 기기 안에만 저장돼요. 설정 → 앱 정보 → '백업 내보내기'로 파일을 만들어 두고 새 폰에서 '백업에서 복원'하면 옮겨져요. 앱을 지우면 기록도 함께 지워지고 복구할 수 없어요.</p>
+</details>
+
+<details id="data"><summary>어떤 정보를 수집하나요</summary>
+<p>이름·이메일·전화번호는 받지 않고 로그인도 없어요. 앱을 고치기 위해 사용 기록(화면 이동, 학습·퀴즈 결과)과 오류 기록을 설치마다 다른 무작위 코드로 보냅니다. 이메일로 문의하시면 그 메일은 답장에만 씁니다. 자세한 내용은 <a href="./">개인정보처리방침</a>을 참고해 주세요.</p>
+</details>
 
 <footer>깨알람 · com.sesamealarm.app · <a href="./">개인정보처리방침</a></footer>
 </body>
